@@ -39,6 +39,7 @@ int main()
 														(double) CLOCKS_PER_SEC; 
 
 	std::cout << "Elapsed Time: " << elapsed_time << std::endl;
+	std::cerr << "Q1 Elapsed Time: " << elapsed_time << std::endl;
 
 	return 0;
 }
