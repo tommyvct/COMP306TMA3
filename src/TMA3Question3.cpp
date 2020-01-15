@@ -1,9 +1,53 @@
+//: TMA3Question3.cpp
+
+/**
+ * Title: TMA3Question3.cpp
+ * Description:
+ *      Operator overloading.
+ * Date: November 18, 2019
+ * Author: Tommy Wu
+ */
+
+/**
+ * DOCUMENTATION
+ * 
+ * Program Purpose:
+ *      1. Create a class with a int
+ *      2. Overload operator + - ++ -- <<, and also a print function
+ * 
+ * Compile: clang++ TMA3Question3.cpp -o TMA3Question3
+ * Execution : ./TMA3Question3
+ */
+
+/**
+ * No test available for a fully static program.
+ * 
+ * The program should generate following output from stdout:
+ *  normal arithmetic
+ *  2 + 3 - (-5) = 10
+ *  
+ *  DoStuff arithmetic
+ *  2 + 3 - (-5) = 10
+ *   
+ *  Increment d prefix and postfix: 
+ *  d = 10
+ *  d++ = 10
+ *  d = 11
+ *  ++d = 12
+ *  d = 12
+ *   
+ *  d-- = 12
+ *  d = 11
+ *  --d = 10
+ *  (using operator<<) d = 10 * stderr displays the calculation result.
+ */
+
+
 #include <iostream>
 #include <string>
 
 
-// TODO: format to submission standards
-// TODO: impllement a reversed polish evaluator if time permits
+// TODO: implement a reversed polish parser if time permits
 class DoStuff
 {
 private:
@@ -98,16 +142,27 @@ int main()
     d.print(std::cout);
     std::cout << std::endl << std::endl;
 
+    // std:: cout << ++DoStuff(4) + DoStuff(5) - DoStuff(99) << std::endl;
+
     std::cout << "Increment d prefix and postfix: " << std::endl;
+    
+    std::cout << "d = ";
+    d.print(std::cout);   // 10
+    std::cout << std::endl;
+
+    std::cout << "d++ = ";    
     d++.print(std::cout);  // 10
     std::cout << std::endl;
     
+    std::cout << "d = ";    
     d.print(std::cout);   //  11
     std::cout << std::endl;
     
+    std::cout << "++d = ";    
     (++d).print(std::cout);  // 12
     std::cout << std::endl;
     
+    std::cout << "d = ";    
     d.print(std::cout);      // 12
     std::cout << std::endl;
 
@@ -115,19 +170,22 @@ int main()
     std::cout << std::endl;
 
 
+    std::cout << "d-- = ";    
     d--.print(std::cout);  // 12
     std::cout << std::endl;
     
+    std::cout << "d = ";    
     d.print(std::cout);   //  11
     std::cout << std::endl;
     
+    std::cout << "--d = ";    
     (--d).print(std::cout);  // 10
     std::cout << std::endl;
     
     // d.print(std::cout);      // 10
-    
+    std::cout << "(using operator<<) d = ";    
     std::cout << d << std::endl;
 
 
     return 0;
-}
+} ///:~
